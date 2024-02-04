@@ -1,0 +1,237 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="{% static 'cvgen/styles.css' %}">
+
+    <title>CV Generator</title>
+</head>
+<body>
+
+
+    <div class="container">
+      <div class="header">
+        <div class="full-name">
+          <span class="first-name">{{ profile.first_name }}</span>
+          <span class="last-name">{{ profile.last_name }}</span>
+        </div>
+        <div class="contact-info">
+          <span class="email">Email: </span>
+          <span class="email-val">{{ profile.email }}</span>
+          <span class="separator"></span>
+          <span class="phone">Phone: </span>
+          <span class="phone-val">{{ profile.phone }}</span>
+        </div>
+
+        <div class="about">
+          <span class="desc">
+            {{ profile.summary }}
+          </span>
+        </div>
+      </div>
+       <div class="details">
+        <div class="section">
+          <div class="section__title">Experience</div>
+          <div class="section__list">
+            <div class="section__list-item">
+              <div class="left">
+                <div class="name">{{ profile.previous_work1 }}</div>
+                <div class="addr">{{ profile.previous_work1_loc }}</div>
+                <div class="duration">{{ profile.previous_work1_date }}</div>
+              </div>
+              <div class="right">
+                <div class="name">{{ profile.previous_work1_pos }}</div>
+                <div class="desc">{{ profile.previous_work1_role }}</div>
+              </div>
+            </div>
+
+              {% if profile.previous_work2 %}
+                    <div class="section__list-item">
+              <div class="left">
+                <div class="name">{{ profile.previous_work2 }}</div>
+                <div class="addr">{{ profile.previous_work2_loc }}</div>
+                <div class="duration">{{ profile.previous_work2_date }}</div>
+              </div>
+              <div class="right">
+                <div class="name">{{ profile.previous_work2_pos }}</div>
+                <div class="desc">{{ profile.previous_work2_role }}</div>
+              </div>
+            </div>
+
+              {% endif %}
+
+          </div>
+        </div>
+        <div class="section">
+          <div class="section__title">Education</div>
+          <div class="section__list">
+            <div class="section__list-item">
+              <div class="left">
+                <div class="name">{{ profile.university1 }}</div>
+                <div class="addr">{{ profile.university_qualification1 }}</div>
+                <div class="addr">{{ profile.university_address1 }}</div>
+                <div class="duration">{{ profile.university_date1 }}</div>
+              </div>
+
+                {% if profile.university2 %}
+              <div class="right">
+                <div class="name">{{ profile.university2 }}</div>
+                <div class="addr">{{ profile.university_qualification2 }}</div>
+                <div class="addr">{{ profile.university_address2 }}</div>
+                <div class="duration">{{ profile.university_date2 }}</div>
+              </div>
+
+                {% endif %}
+            </div>
+
+          </div>
+
+      </div>
+         <div class="section">
+          <div class="section__title">Projects</div>
+           <div class="section__list">
+             <div class="section__list-item">
+               <div class="name">{{ profile.project1 }}</div>
+               <div class="text">{{ profile.project1_desc }}</div>
+             </div>
+
+             <div class="section__list-item">
+                 {% if profile.project2 %}
+                        <div class="name">{{ profile.project2 }}</div>
+               <div class="text">{{ profile.project2_desc }} </div>
+                 {% endif %}
+             </div>
+           </div>
+        </div>
+
+
+         <div class="section">
+           <div class="section__title">Skills</div>
+           <div class="skills">
+             <div class="skills__item">
+               <div class="left"><div class="name">
+                 {{ profile.skill1 }}
+                 </div></div>
+               <div class="right">
+                              <input  id="ck1" type="checkbox" checked/>
+
+                 <label for="ck1"></label>
+                              <input id="ck2" type="checkbox" checked/>
+
+                  <label for="ck2"></label>
+                             <input id="ck3" type="checkbox" />
+
+                  <label for="ck3"></label>
+                               <input id="ck4" type="checkbox" />
+                <label for="ck4"></label>
+                              <input id="ck5" type="checkbox" />
+                  <label for="ck5"></label>
+
+               </div>
+             </div>
+
+           </div>
+
+
+             {% if profile.skill2 %}
+             <div class="skills2">
+           <div class="skills__item">
+               <div class="left"><div class="name">
+                 {{ profile.skill2 }}</div></div>
+               <div class="right">
+                              <input  id="ck6" type="checkbox" checked/>
+
+                 <label for="ck6"></label>
+                              <input id="ck7" type="checkbox" checked/>
+
+                  <label for="ck7"></label>
+                             <input id="ck8" type="checkbox" />
+
+                  <label for="ck8"></label>
+                               <input id="ck9" type="checkbox" />
+                <label for="ck9"></label>
+                              <input id="ck10" type="checkbox" />
+                  <label for="ck10"></label>
+
+               </div>
+             </div>
+
+             {% endif %}
+
+             </div>
+
+
+             {% if profile.skill3 %}
+
+             <div class="skills__item">
+               <div class="left"><div class="name">
+                 {{ profile.skill3 }}</div></div>
+               <div class="right">
+                              <input  id="ck11" type="checkbox" checked/>
+
+                 <label for="ck11"></label>
+                              <input id="ck12" type="checkbox" checked/>
+
+                  <label for="ck12"></label>
+                             <input id="ck13" type="checkbox" />
+
+                  <label for="ck13"></label>
+                               <input id="ck14" type="checkbox" />
+                <label for="ck14"></label>
+                              <input id="ck15" type="checkbox" />
+                  <label for="ck15"></label>
+
+               </div>
+             </div>
+
+             {% endif %}
+
+             {% if profile.skill4 %}
+
+             <div class="skills__item">
+               <div class="left"><div class="name">
+                 {{ profile.skill4 }}</div></div>
+               <div class="right">
+                              <input  id="ck16" type="checkbox" checked/>
+
+                 <label for="ck16"></label>
+                              <input id="ck17" type="checkbox" checked/>
+
+                  <label for="ck17"></label>
+                             <input id="ck18" type="checkbox" />
+
+                  <label for="ck18"></label>
+                               <input id="ck19" type="checkbox" />
+                <label for="ck19"></label>
+                              <input id="ck20" type="checkbox" />
+                  <label for="ck20"></label>
+
+               </div>
+             </div>
+
+             {% endif %}
+
+           </div>
+         <div class="section">
+         <div class="section__title">
+           Interests
+           </div>
+           <div class="section__list">
+             <div class="section__list-item">
+                 {{ profile.interests }}
+              </div>
+           </div>
+         </div>
+         </div>
+      </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,311 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CV Generator</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<!--    <link rel="stylesheet" href="{% static 'shop/style.css' %}">-->
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-start">
+                <h1>CV Generator</h1>
+            </div>
+            <br>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                <form method="POST">
+                    {% csrf_token %}
+                  <div class="form-group">
+                    <label for="name">First Name</label>
+                    <input type="text" class="form-control" id="fname" name="fname">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name">Last Name</label>
+                    <input type="text" class="form-control" id="lname" name="lname">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name">Email</label>
+                    <input type="text" class="form-control" id="email" name="email">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name">Phone</label>
+                    <input type="text" class="form-control" id="phone" name="phone">
+                  </div>
+
+
+                  <div class="form-group">
+                    <label for="name">About You</label>
+                    <textarea class="form-control" id="summary" name="summary"></textarea>
+                  </div>
+
+                    <hr>
+<!--                    START EDUCATION -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p><b>Education 1</b></p>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="name">School/University</label>
+                            <input type="text" class="form-control" id="university1" name="university1">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="name">Degree/Qualification</label>
+                            <input type="text" class="form-control" id="university_qualification1" name="university_qualification1">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="name">School Address</label>
+                            <input type="text" class="form-control" id="university_address1" name="university_address1">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="name">Year of Graduation</label>
+                            <input type="text" class="form-control" id="university_date1" name="university_date1">
+                          </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p><b>Education 2</b></p>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="name">School/University</label>
+                            <input type="text" class="form-control" id="university2" name="university2">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="name">Degree/Qualification</label>
+                            <input type="text" class="form-control" id="university_qualification2" name="university_qualification2">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="name">School Address</label>
+                            <input type="text" class="form-control" id="university_address2" name="university_address2">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="name">Year of Graduation</label>
+                            <input type="text" class="form-control" id="university_date2" name="university_date2">
+                          </div>
+                        </div>
+                    </div>
+
+<!--                 END   EDUCATION -->
+                    <br>
+<!--                 START   WORK EXPERIENCE -->
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p><b>Previous Work 1</b></p>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="name">Company</label>
+                            <input type="text" class="form-control" id="previous_work1" name="previous_work1">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Position</label>
+                            <input type="text" class="form-control" id="previous_work1_pos" name="previous_work1_pos">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="name">Company Address</label>
+                            <input type="text" class="form-control" id="previous_work1_loc" name="previous_work1_loc">
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Employment Date</label>
+                            <input type="text" class="form-control" id="previous_work1_date" name="previous_work1_date">
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label>Job Description</label>
+                            <input type="text" class="form-control" id="previous_work1_role" name="previous_work1_role">
+                          </div>
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p><b>Previous Work 2</b></p>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="name">Company</label>
+                            <input type="text" class="form-control" id="previous_work2" name="previous_work2">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Position</label>
+                            <input type="text" class="form-control" id="previous_work2_pos" name="previous_work2_pos">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="name">Company Address</label>
+                            <input type="text" class="form-control" id="previous_work2_loc" name="previous_work2_loc">
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Employment Date</label>
+                            <input type="text" class="form-control" id="previous_work2_date" name="previous_work2_date">
+                          </div>
+                        </div>
+
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label>Job Description</label>
+                            <input type="text" class="form-control" id="previous_work2_role" name="previous_work2_role">
+                          </div>
+                        </div>
+
+                    </div>
+                    <br>
+                    <hr>
+
+<!--                 END   WORK EXPERIENCE -->
+
+<!--                  START PROJECTS -->
+                        <div class="row">
+                        <div class="col-md-12">
+                            <p><b>Project 1</b></p>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="name">Project Name</label>
+                            <input type="text" class="form-control" id="project1" name="project1">
+                          </div>
+                        </div>
+
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label>Project Description</label>
+                            <input type="text" class="form-control" id="project1_desc" name="project1_desc">
+                          </div>
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <p><b>Project 2</b></p>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label for="name">Project Name</label>
+                            <input type="text" class="form-control" id="project2" name="project2">
+                          </div>
+                        </div>
+
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label>Project Description</label>
+                            <input type="text" class="form-control" id="project2_desc" name="project2_desc">
+                          </div>
+                        </div>
+
+                    </div>
+                    <br>
+                    <hr>
+
+<!--                  END PROJECTS -->
+
+<!--                    START SKILLS-->
+                             <br>
+                    <div class="row">
+                        <p><b>Skills</b></p>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="skill1" name="skill1">
+                          </div>
+                        </div>
+
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="skill2" name="skill2">
+                          </div>
+                        </div>
+
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="skill3" name="skill3">
+                          </div>
+                        </div>
+
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="skill4" name="skill4">
+                          </div>
+                        </div>
+
+                    </div>
+<!--                    END SKILLS -->
+                    <br>
+
+                    <div class="form-group">
+                    <label for="name">Interests</label>
+                    <input type="text" class="form-control" id="interests" name="interests" placeholder="Football, programming, etc...">
+                  </div>
+                    <br>
+
+                  <button type="submit" class="btn btn-primary">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
